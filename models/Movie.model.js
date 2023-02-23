@@ -1,16 +1,11 @@
 const { Schema, model } = require("mongoose")
 
-const movieSchema = new Schema(
-  {
-    name: String,
-    genre: String,
-    plot: String,
-    cast: [{ type: mongoose.Schema.Types.ObjectId, ref: "Celebrity" }],
-  },
-  {
-    timestamps: true,
-  }
-)
+const movieSchema = new Schema({
+  title: String,
+  genre: String,
+  plot: String,
+  cast: String,
+})
 
 const Movie = model("Movie", movieSchema)
 

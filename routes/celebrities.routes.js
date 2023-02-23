@@ -21,11 +21,11 @@ router.post("/celebrities/create", (req, res, next) => {
   const { name, occupation, catchPhrase } = req.body
   Celebrity.create({ name, occupation, catchPhrase })
     .then((newCelebrity) => {
-      res.render("celebrities/celebrities")
+      res.redirect("/celebrities")
     })
     .catch((err) => {
       console.log(err + "redirect to new-celebrity")
-      res.redirect("celebrities/new-celebrity")
+      res.redirect("/celebrities/new-celebrity")
     })
 })
 
