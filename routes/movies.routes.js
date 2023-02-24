@@ -5,8 +5,10 @@ const Celebrity = require("../models/Celebrity.model")
 router.get("/movies", (req, res, next) => {
   Movie.find()
     .then((moviesDB) => {
+      const movies = [...moviesDB]
       console.log("Find movies works")
-      res.render("movies/movies", { moviesDB })
+      res.render("movies/movies", { movies })
+      // console.log(`${moviesDB}`)
     })
     .catch((err) => {
       console.log(err)
@@ -14,6 +16,7 @@ router.get("/movies", (req, res, next) => {
 })
 
 router.get("/movies/create", (req, res, next) => {
+  console.log(`also this works well`)
   res.render("movies/new-movie")
 })
 

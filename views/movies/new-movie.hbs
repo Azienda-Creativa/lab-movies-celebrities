@@ -14,11 +14,13 @@
   <label for="cast">Cast:</label>
   <input type="text" name="cast" placeholder="cast" />
 
-  {{!-- <select name="new-movie" id="select-id" multiple>
-    {{#each movieDB}}
-      <option value="option1">{{title}}</option>
+  <select name="cast" id="cast" multiple>
+    {{#each newMovie}}
+      <option value="{{_id}}">{{name}}</option>
+
     {{/each}}
-  </select> --}}
+  </select>
+
   <br /><br />
   <input type="submit" value="Submit" />
 </form>
